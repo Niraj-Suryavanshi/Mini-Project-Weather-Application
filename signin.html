@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.bg 
+        {
+        	background: #348cb2 url("bg.jpg") bottom left;
+        	background-repeat: no-repeat;
+        	height: 100%;
+        	position: fixed;
+        	width: 100%;
+     	}
+		a 
+		{
+			color: pink;
+			text-decoration: none;
+		}
+		.header nav li
+		{
+			display: inline-block;
+			width: 15%;
+		}
+	    .header nav a
+		{
+			font-size: 35px;
+			line-height: 50px;															
+		}
+		.main 
+		{
+			position: fixed;
+			text-align: center;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<center class="bg">
+		<br/><br/>
+		<p class="main">
+		<header class="header">
+						<nav>
+							<ul>
+								<h2>			
+								<li><a href="homepage.html">HOME</a></li>
+								<li><a href="signin.html">LOGIN</a></li>
+								<li><a href="aboutus.html">ABOUT </a></li>
+								</h2>
+							</ul>
+						</nav>
+					</header>
+		</p>
+		<h1 style="font-family: cursive; font-size: 60px; color:purple;"><center>LOGIN</center></h1>
+		<fieldset style="margin-right: 420px;margin-left: 480px;margin-bottom: 100px;margin-top:10px; border-color: white;">
+		<table cellpadding="6" cellspacing="8">
+			<form action="signin.php" method="post">
+				<tr><br/>
+					<td style="font-family: cursive;font-size: 25px; color:white;">E-mail:</td>
+					<td><input type="text" name="email" id="email"  placeholder="Enter E-mail Address" style="font-family: cursive; font-size: 18px;"></td>
+					<td><span id="em" style="font-family: candara; font-size: 15px;"></span></td>
+				</tr>
+				<tr>
+					<td style="font-family: cursive;font-size: 25px; color:white;">Password:</td>
+					<td><input type="password" name="password" id="password" placeholder="Enter Password" style="font-family: cursive; font-size: 18px;"></td>
+					<td><span id="pw" style="font-family: candara; font-size: 15px;"></span></td>
+				</tr>
+				<tr></tr>
+				<tr>
+				<td></td>	
+				<td style="text-align: left;"><br /><input type="submit" name="submit" value="Login" style="color: black; font-size: 20px; font-family: cursive;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td colspan="2"><b style="font-family: cursive;font-size: 20px;"><a href="signup.html" style="color: yellow;">Sign Up</a></b></td>
+				</tr>
+			</form>
+		</table>
+		</fieldset>
+	</center>
+</body>
+<script type="text/javascript">
+			function valemail() 
+			{
+				var a;
+				a=document.getElementById('email').value;
+				if(a==null||a=="")
+        		{
+            			document.getElementById("em").innerHTML ="Need to be filledout!";
+           				document.getElementById("em").style.color ='red' ;
+        		}
+				if (a.indexOf('@') <= 0)
+	 			{
+                		document.getElementById("em").innerHTML ="Invalid Email!";
+						document.getElementById("em").style.color ='red' ;
+				}	
+                else
+				{
+					    document.getElementById("em").innerHTML ="";
+						document.getElementById("em").style.color ='red';
+				}
+			}
+			document.getElementById("email").addEventListener("keyup",valemail);	
+			function pass()
+			{
+                var b;
+                b = document.getElementById("password").value;
+                if(b==null||b=="")
+        		{
+            			document.getElementById("pw").innerHTML ="Need to be filledout!";
+            			document.getElementById("pw").style.color ='red' ;
+        		}
+                if (b.length != 8)
+                {
+                		document.getElementById("pw").innerHTML ="Invalid Password!";
+						document.getElementById("pw").style.color ='red' ;		
+                }
+                else
+				{
+						document.getElementById("pw").innerHTML ="";
+						document.getElementById("pw").style.color ='red';	
+				}
+			}
+			document.getElementById("password").addEventListener("keyup",pass);	
+		</script>
+</html>
